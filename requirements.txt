@@ -1,0 +1,10 @@
+Django==2.2.2
+django-rest-framework==0.1.0
+dlib==19.22.1
+ImageToolsMadeEasy==2019.12.30
+imutils==0.5.4
+numpy==1.19.5
+opencv-python==4.5.3.56
+Pillow==5.1.0
+psycopg2-binary==2.8.3
+python-dotenv==0.10.3

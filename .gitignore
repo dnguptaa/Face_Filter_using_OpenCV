@@ -1,0 +1,8 @@
+db.sqlite3
+face_filter/migrations/
+__pycache__
+migration_scripts/
+.env
+.vscode/
+ENV_DIR/
+data/data

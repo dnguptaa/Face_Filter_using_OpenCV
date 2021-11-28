@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    {% block title %}
+    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
+    <title>Home</title>
+    {% endblock title %}
+</head>
+
+<body>
+    {% block content %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            </div>
+        </div>
+    </nav>
+    <div class="livestream_section">
+        <h4>Go live and checkout new filters</h4>
+        <form action="live_stream" method="post">
+            <div class="form-group">
+                <label for="filter_type">Select Filter</label>
+                <select class="form-control" id="filter_type" name="filter_type" required>
+                    <option value="eye">Eyes</option>
+                    <option value="nose">Nose</option>
+                    <option value="eye_and_nose">Both</option>
+                    <option value="face">Face</option>
+                    <option value="edge_detection">Edge Detection</option>
+                    <option value="blur">Blur</option>
+                </select>
+            </div>
+            {% csrf_token %}
+
+            <button type="submit" class="btn btn-primary">Go Live</button>
+            <h6>To stop the streaming, please enter "q"</h6>
+            <form>
+
+    </div>
+    {% endblock content %}
+</body>
+
+</html>
